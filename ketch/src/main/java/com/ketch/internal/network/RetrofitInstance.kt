@@ -25,6 +25,8 @@ internal object RetrofitInstance {
                                 .Builder()
                                 .connectTimeout(connectTimeOutInMs, TimeUnit.MILLISECONDS)
                                 .readTimeout(readTimeOutInMs, TimeUnit.MILLISECONDS)
+                                .retryOnConnectionFailure(true)
+                                .protocols(listOf(Protocol.HTTP_1_1))
                                 .build()
                         )
                         .build()
